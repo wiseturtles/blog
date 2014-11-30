@@ -39,6 +39,11 @@ TAG_CLOUD_MAX_ITEMS = 100
 # Theme
 THEME = "theme"
 
+
+# code highlight style, one of below
+# [default emacs friendly colorful autumn murphy manni monokai perldoc pastie borland trac native fruity bw vs tango]
+PYGMENT_STYLE = "emacs"
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
