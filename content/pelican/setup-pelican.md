@@ -3,7 +3,7 @@ Date: 2014-11-30 22:42
 Tags: pelican, blog, github
 Slug: setup-pelican
 Author: crazygit
-Summary: how to use pelican to setup personal blog
+Summary: 如何使用github和pelican搭建个人博客
 
 
 ## 为什么选择Pelican

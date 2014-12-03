@@ -3,7 +3,7 @@ Date: 2014-12-03 00:04
 Tags: pelican, blog, github
 Slug: about-wiseturtles
 Author: crazygit
-Summary: About wiseturtles
+Summary: 如何在本博客发表文章
 
 
 ## 为什么要有这个博客
