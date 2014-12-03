@@ -122,23 +122,6 @@ My super title
 ##############
 
 :date: 2010-10-03 10:20
-:modified: 2010-10-04 18:40  
-:tags: thats, awesome
-:category: yeah
-:slug: my-super-post
-:authors: Alexis Metaireau, Conan Doyle
-:summary: Short version for index and feeds
-
-Rst语法的文章正文
-</pre>
-
-### md格式(文件名以 .md, .markdown, .mkd, .mdown结尾）
-
-<pre>
-My super title
-##############
-
-:date: 2010-10-03 10:20
 :modified: 2010-10-04 18:40
 :tags: thats, awesome
 :category: yeah
@@ -146,7 +129,23 @@ My super title
 :authors: Alexis Metaireau, Conan Doyle
 :summary: Short version for index and feeds
 
-markdown语法的文章正文
+This is the content of my super blog post.
+</pre>
+
+### md格式(文件名以 .md, .markdown, .mkd, .mdown结尾）
+
+<pre>
+Title: My super title
+Date: 2010-12-03 10:20
+Modified: 2010-12-05 19:30
+Category: Python
+Tags: pelican, publishing
+Slug: my-super-post
+Authors: Alexis Metaireau, Conan Doyle
+Summary: Short version for index and feeds
+
+This is the content of my super blog post.
+
 </pre>
 
 ### html格式(文件名以.html and .htm结尾）
@@ -162,14 +161,11 @@ markdown语法的文章正文
 &lt;meta name="authors" content="Alexis Métaireau, Conan Doyle" /&gt;
 &lt;meta name="summary" content="Short version for index and feeds" /&gt;
 &lt;/head&gt;
+
 &lt;body&gt;
 This is the content of my super blog post.
 &lt;/body&gt;
 &lt;/html&gt;
-
-&lt;body&gt;
-html正文
-&lt;/body&gt;
 </pre>
 
 
@@ -205,7 +201,6 @@ A block of text.
 ## 图片和附件管理
 
 一般不建议将文章中要使用到的图片或附件提交到blog库中，避免引起blog库迅速增大， blog库建议只保存纯文本的东西。可以将要使用的图片或附件上传到支持外链的第三方存储，然后在文正里直接引用图片或附件的URL。或者单独建立一个git库来保存图片和附件。
-
 
 
 ## 最后
