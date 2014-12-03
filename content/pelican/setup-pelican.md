@@ -9,7 +9,7 @@ Summary: how to use pelican to setup personal blog
 ## 为什么选择Pelican
 
 想搭建一个博客，不想受门户网站博客的限制，想用更纯净的方式写作，方便数据转移，
-专注内容而不是格式，在这个页面<https://www.staticgen.com>罗列了各种语言的静态博客引擎, 最终选择了Pelican，
+专注内容而不是格式，在这个页面<https://www.staticgen.com>罗列了各种语言的静态博客引擎, 最终选择了Pelican.
 
 为什么呢？
 > 因为人生苦短，我用python
@@ -20,7 +20,7 @@ Summary: how to use pelican to setup personal blog
 * 它是一个基于python语言的静态博客引擎
 * 使用Jinjia作为主题的模板语言
 * 支持Markdown, reStructuredText格式
-* 其他特色
+* 其他牛逼的特色等
 
 
 ## 安装Pelican
@@ -49,7 +49,7 @@ Summary: how to use pelican to setup personal blog
     $ workon pelican # 激活虚拟环境
 
 
-另一个情况是当前系统默认python版本不是2.7.X的，
+另一种情况是当前系统默认python版本不是2.7.X的，
 为了方便及不影响当前系统的python版本，可以使用[pythonbrew](https://github.com/utahta/pythonbrew)来搭建Python2.7.x环境。
 安装步骤: <https://github.com/utahta/pythonbrew/blob/master/README.rst>
 
@@ -138,7 +138,7 @@ Summary: how to use pelican to setup personal blog
 ### 创建第一篇文章
 
 说了这么多了，都还没有开始写呢，让我们开始写第一篇文章吧。
-pelican 支持三种格式的文件，reStructuredText， markdown和html。
+pelican 支持三种格式的文件： reStructuredText， markdown和html。
 个人偏好于markdwon。下面就主要介绍markdown的吧，其他的可以到[官网查看](http://docs.getpelican.com/en/3.2/getting_started.html#kickstart-your-site).
 上面写得很清楚。
 
@@ -168,7 +168,7 @@ pelican 支持三种格式的文件，reStructuredText， markdown和html。
 博客的配置通过修改`publishconf.py`
 文件来实现，由于可以pelican比较灵活，可以配置的地方比较的多，就不介绍了，可以
 查看[官方文档](http://docs.getpelican.com/en/3.2/settings.html)查找自己需要的
-。其实，默认的配置基本上已经很好了，我自己除了在配置文件里面加上了时区之外，其他的基本上没有修改什么了。 
+。其实，默认的配置基本上已经很好了，我自己除了在配置文件里面加上了时区之外，其他的基本上没有修改什么了。
 给一个官方的配置文件示例:
 
     # -*- coding: utf-8 -*-
