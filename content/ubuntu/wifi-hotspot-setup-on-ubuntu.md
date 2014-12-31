@@ -6,12 +6,21 @@ Slug: wifi-hotspot-setup-on-ubuntu
 Authors: Zhang Wanming
 Summary: Ubuntu笔记本上配置hotspot
 
-为了Ubuntu笔记本方便对Android手机上的Apps做抓包。
+hotspot配置参考：http://thenewbieblog.wordpress.com/2012/05/01/wifi-hotspot-setup-on-ubuntu/
+Android利用Fiddler抓包：http://www.trinea.cn/android/android-network-sniffer/
+Android利用tcpdump抓包：http://www.trinea.cn/android/tcpdump_wireshark/
 
-参考：http://thenewbieblog.wordpress.com/2012/05/01/wifi-hotspot-setup-on-ubuntu/
+为了Ubuntu笔记本方便对Android手机上的Apps做抓包, 本文介绍两种方法，方法二更容易配置。
+有线、无线同时可以工作时，用下面方法将无线网卡作为hotspot，通过有线连接外网。
+如果想直接通过无线网卡上外网，需要先停掉hostapd 或 ap-hotspot，并重启网络。
 
-查看Ubuntu系统配置
-===================
+重启网络:
+
+    :::bash
+    $ sudo service network-manager restart
+
+方法一
+=======
 
 查看无线网卡硬件信息
 ---------------------
@@ -145,3 +154,21 @@ Summary: Ubuntu笔记本上配置hotspot
 ---------
 
 重启电脑，手机测试是否可以连接.
+
+
+方法二
+=======
+
+用ap-hotspot更容易搭建。
+
+ap-hotspot安装、配置
+---------------------
+
+    :::bash
+    $ sudo add-apt-repository ppa:nilarimogard/webupd8
+    $ sudo apt-get install ap-hotspot
+    $ sudo ap-hotspot configure # configure
+    $ sudo ap-hotspot start # start
+    $ sudo ap-hotspot stop # stop
+    $ sudo ap-hotspot restart # restart
+
