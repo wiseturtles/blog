@@ -35,11 +35,13 @@ ps命令用来列出系统中当前运行的那些进程。ps命令列出的是�
 
 1. 显示所有进程
 
+        :::bash
         $ ps aux
         $ ps -ef
 
 2. 显示指定用户的进程
 
+        :::bash
         $ ps -f -u www-data
 
         # 多个用户用','隔开
@@ -47,70 +49,75 @@ ps命令用来列出系统中当前运行的那些进程。ps命令列出的是�
 
 3. 按照进程名来指定
 
+        :::bash
         $ ps -C nginx
 
     -C 选项必须提供精确的进程名，不提供模糊匹配，一般使用grep来搜索
 
+        :::bash
         $ ps -ef |grep nginx
 
 4. 按照进程id来查找
 
+        :::bash
         $ ps -f -p 3150,7298,6455
 
 5. 按照CPU或内存使用情况排序
 
     使用--sort选项可以按照一定的顺序排序，并且可以在指定的排序列前添加'-'或'+' 来指定降序或升序排列
 
-            # cpu 使用前５
-            $ ps aux --sort=-pcpu | head -5
+        :::bash
+        # cpu 使用前５
+        $ ps aux --sort=-pcpu | head -5
 
-            # 内存 使用前５
-            $ ps aux --sort=-pmem | head -5
+        # 内存 使用前５
+        $ ps aux --sort=-pmem | head -5
 
-            # 指定多个排序
-            $ ps jax --sort=uid,-ppid,+pid
+        # 指定多个排序
+        $ ps jax --sort=uid,-ppid,+pid
 
     排序选项参见man page `STANDARD FORMAT SPECIFIERS`部分
 
     部分选项列出如下
     <pre>
-       cmd          simple name of executable
-       pcpu         cpu utilization
-       pmem         ratio of the process's resident set size to the
-                    physical memory on the machine, expressed as a
-                    percentage
-       flags        flags as in long format F field
-       pgrp         process group ID
-       tpgid        controlling tty process group ID
-       cutime       cumulative user time
-       cstime       cumulative system time
-       utime        user time
-       min_flt      number of minor page faults
-       maj_flt      number of major page faults
-       cmin_flt     cumulative minor page faults
-       cmaj_flt     cumulative major page faults
-       session      session ID
-       pid          process ID
-       ppid         parent process ID
-       rss          resident set size
-       resident     resident pages
-       size         approximate amount of swap space that would be
-                    required if the process were to dirty all writable
-                    pages and then be swapped out. This number is
-                    very rough!
-       share        amount of shared pages
-       tty          the device number of the controlling tty
-       start_time   time process was started
-       uid          user ID number
-       user         user name
-       vsize        total VM size in kB
-       priority     kernel scheduling priority
+    cmd          simple name of executable
+    pcpu         cpu utilization
+    pmem         ratio of the process's resident set size to the
+                physical memory on the machine, expressed as a
+                percentage
+    flags        flags as in long format F field
+    pgrp         process group ID
+    tpgid        controlling tty process group ID
+    cutime       cumulative user time
+    cstime       cumulative system time
+    utime        user time
+    min_flt      number of minor page faults
+    maj_flt      number of major page faults
+    cmin_flt     cumulative minor page faults
+    cmaj_flt     cumulative major page faults
+    session      session ID
+    pid          process ID
+    ppid         parent process ID
+    rss          resident set size
+    resident     resident pages
+    size         approximate amount of swap space that would be
+                required if the process were to dirty all writable
+                pages and then be swapped out. This number is
+                very rough!
+    share        amount of shared pages
+    tty          the device number of the controlling tty
+    start_time   time process was started
+    uid          user ID number
+    user         user name
+    vsize        total VM size in kB
+    priority     kernel scheduling priority
     </pre>
 
 6. 按照树状结构显示
 
     使用`--forest`选项
 
+        :::bash
         $ ps -f --forest -C nginx
         UID        PID  PPID  C STIME TTY          TIME CMD
         root      1344     1  0  2014 ?        00:00:00 nginx: master process /usr/sbin/nginx
@@ -123,6 +130,7 @@ ps命令用来列出系统中当前运行的那些进程。ps命令列出的是�
 
 7. 列出子进程
 
+        :::bash
         ＃先列出所有nginx进程
         $ ps -o pid,uname,comm -C nginx
         PID USER     COMMAND
@@ -145,12 +153,14 @@ ps命令用来列出系统中当前运行的那些进程。ps命令列出的是�
 
     使用`-L`选项
 
+        :::bash
         $ ps -p 3150 -L
 
 9. 指定输出结果的列
 
     可以输出的列信息与`--sort`选项一样，可以查看man page 的`STANDARD FORMAT SPECIFIERS`部分
 
+        :::bash
         $ ps -e -o pid,uname,pcpu,pmem,comm
 
         # 显示指定的列并给出别名
@@ -158,6 +168,7 @@ ps命令用来列出系统中当前运行的那些进程。ps命令列出的是�
 
 10. 将ps转变为实时更新的效果
 
+        :::bash
         $  watch -n 1 'ps -e -o pid,uname,cmd,pmem,pcpu --sort=-pmem,-pcpu | head -15'
 
 11. 部分选项解释
