@@ -26,8 +26,7 @@ htop用C语言编写，采用了ncurses库。htop的名称源于其作者的名�
 
     ![htop screenshot](http://pic.yupoo.com/crazygit_v/ElYP0hQ6/medium.jpg)
 
-    上面左上角显示CPU、内存、Swap使用情况，右边显示任务、负载、开机时间，下面
-    就是进程实时状况。
+    上面左上角显示CPU、内存、Swap使用情况，右边显示任务、负载、开机时间，下面就是进程实时状况。
 
 3. 常用快捷键
 
@@ -402,6 +401,6 @@ htop用C语言编写，采用了ncurses库。htop的名称源于其作者的名�
 
 6. 替代top
 
-    用htop替换top，可添加别名，编辑/root/.bashrc文件，添加如下代码
+    用htop替换top，可添加别名，编辑`~/.bashrc`文件，添加如下代码
 
         alias top=htop
