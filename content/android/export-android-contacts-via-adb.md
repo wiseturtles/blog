@@ -64,4 +64,6 @@ Android解锁我没试过，命令如下：
     update secure set value=0 where name=’lockscreen.lockedoutpermanently';
     .quit
 
-如果是忘了Android锁屏图案，想找回，可以试试 https://github.com/sch3m4/androidpatternlock
+如果是忘了Android锁屏图案，想找回，可以试试:
+
+<https://github.com/sch3m4/androidpatternlock>

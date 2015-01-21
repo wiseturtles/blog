@@ -33,6 +33,7 @@ ARTICLE_URL = 'posts/{slug}.html'
 ARTICLE_SAVE_AS = 'posts/{slug}.html'
 PAGE_URL = '{slug}.html'
 PAGE_SAVE_AS = '{slug}.html'
+ARCHIVES_URL = "archives.html"
 
 # Tag cloud
 TAG_CLOUD_STEPS = 4
