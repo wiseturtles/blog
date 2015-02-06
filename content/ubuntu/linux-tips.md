@@ -129,7 +129,7 @@ Summary: the tips of use linux
 
 ### python自动激活项目的虚拟环境
 
-重写`cd`命令，是它在进入到python项目时，自动激活与项目名一样的虚拟环境
+重写`cd`命令，使它在进入到python项目时，自动激活与项目名一样的虚拟环境
 
     :::bash
     function workon_cwd {
