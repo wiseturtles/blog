@@ -22,6 +22,7 @@ nginx第三方模块的人来说，是一个非常不错的选择.
 
 1. 创建如下文件:
 
+        :::bash
         $ cat /etc/init.d/nginx
 
         #!/bin/bash
@@ -160,12 +161,14 @@ nginx第三方模块的人来说，是一个非常不错的选择.
 
     * CentOS系统
 
+            :::bash
             chkconfig --list nginx   # 列出系统nginx服务启动情况
             chkconfig --add nginx    # 添加nginx服务
             chkconfig --level 35 nginx on # 设定nginx在等级3和5为开机运行服务，--level 35表示操作只在等级3和5执行，on表示启动，off表示关闭
 
     * Debian系统
 
+            :::bash
             sudo update-rc.d -f nginx remove  # 删除nginx服务
             sudo update-rc.d apache2 defaults # 添加nginx服务
 
@@ -174,6 +177,7 @@ nginx第三方模块的人来说，是一个非常不错的选择.
 
 创建如下文件
 
+    :::bash
     $ cat /etc/logrotate.d/nginx
     /etc/openresty/nginx/logs/*.log {
         daily
@@ -207,4 +211,5 @@ nginx第三方模块的人来说，是一个非常不错的选择.
 
 测试:
 
+    :::bash
     $ logroate -f /etc/logrotate.d/nginx
