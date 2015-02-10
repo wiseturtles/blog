@@ -12,7 +12,7 @@ OpenResty（也称为 ngx_openresty）是一个全功能的 Web 应用服务器�
 nginx第三方模块的人来说，是一个非常不错的选择.
 
 
-## 下架及安装
+## 下载及安装
 
 关于如何下载及安装OpenResty, [官网](http://openresty.org/cn/)已经有很详细的介
 绍，不再赘述。
