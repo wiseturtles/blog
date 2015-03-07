@@ -16,6 +16,10 @@ Summary: Ubuntu 12.04上源码编译安装vim 7.4
         $ sudo apt-get install checkinstall
 
 
+### 删除系统vim包
+        $ sudo apt-get purge vim-tiny vim-common vim-runtime vim
+
+
 ### 下载编译
 
         $ hg clone https://code.google.com/p/vim/
