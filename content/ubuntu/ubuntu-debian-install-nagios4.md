@@ -58,8 +58,7 @@ Ucloud后台监控系统功能很简单，最近发现之前设置过的监控�
     $ sudo htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
     $ sudo service apache2 restart
 
-
-
+浏览器访问 http://监控主机IP/nagios 查看监控情况, 登录用户名、密码就是 htpasswd 设置的。
 nagios 4将被安装到 /usr/local/nagios 目录，该目录下的 etc 是配置文件夹。
 
 安装nagios-plugins-2.0.3
@@ -359,3 +358,9 @@ CHECK_NRPE: Error - Could not complete SSL handshake.
 
 
 下次再学习并补充联系人及报警相关设置。
+
+
+参考：
+
+1. https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04
+2. http://netkiller.github.io/monitoring/nagios/
