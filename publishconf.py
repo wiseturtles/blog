@@ -21,5 +21,5 @@ DELETE_OUTPUT_DIRECTORY = True
 # Following items are often useful when publishing
 
 GITHUB_URL = "https://github.com/wiseturtles"
-DISQUS_SITENAME = "wiseturtles"
+#DISQUS_SITENAME = "wiseturtles"
 #GOOGLE_ANALYTICS = ""
