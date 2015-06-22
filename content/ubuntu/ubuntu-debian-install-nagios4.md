@@ -1,8 +1,8 @@
 Title: Install Nagios 4 on Ubuntu/Debian
 Date: 2015-05-23
-Category: Ubuntu, Monitor
+Category: Ubuntu
 Tags: Ubuntu, Debian, Monitor, Management
-Slug: install-nagios4-on-ubuntu/debian
+Slug: install-nagios4-on-ubuntu-or-debian
 Authors: Zhang Wanming
 Summary: 在Ubuntu/Debian系统上部署Nagios 4
 
@@ -362,5 +362,5 @@ CHECK_NRPE: Error - Could not complete SSL handshake.
 
 参考：
 
-1. https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04
-2. http://netkiller.github.io/monitoring/nagios/
+1. <https://www.digitalocean.com/community/tutorials/how-to-install-nagios-4-and-monitor-your-servers-on-ubuntu-14-04>
+2. <http://netkiller.github.io/monitoring/nagios/>

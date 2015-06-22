@@ -2,7 +2,7 @@ Title: Upgrade Elasticsearch 1.2.1 to 1.4.5
 Date: 2015-06-19
 Category: Elasticsearch
 Tags: Dashboard, Elasticsearch, Logstash, ELK
-Slug:-Upgrade-Elasticsearch-1.2.1-to-1.4.5
+Slug: Upgrade-Elasticsearch-1.2.1-to-1.4.5
 Authors: Zhang Wanming
 Summary: 将Elasticsearch 1.2.1升级到1.4.5
 
@@ -269,8 +269,8 @@ Summary: 将Elasticsearch 1.2.1升级到1.4.5
 监控插件使用
 --------------
 
-head: http://<your-es-ip>:9200/_plugin/head/
-bigdesk: http://<your-es-ip>:9200/_plugin/bigdesk/
+* head: http://&lt;your-es-ip&gt;:9200/\_plugin/head/
+* bigdesk: http://&lt;your-es-ip&gt;:9200/\_plugin/bigdesk/
 
 
 配置supervisor
@@ -416,7 +416,7 @@ bigdesk: http://<your-es-ip>:9200/_plugin/bigdesk/
 
 参考：
 
-1. http://stackoverflow.com/questions/23656458/elasticsearch-what-to-do-with-unassigned-shards/
-2. http://stackoverflow.com/questions/25135869/how-to-rebalance-shard-elasticsearch
-3. https://t37.net/how-to-fix-your-elasticsearch-cluster-stuck-in-initializing-shards-mode.html
-4. http://stackoverflow.com/questions/19967472/elasticsearch-unassigned-shards-how-to-fix
+1. <http://stackoverflow.com/questions/23656458/elasticsearch-what-to-do-with-unassigned-shards/>
+2. <http://stackoverflow.com/questions/25135869/how-to-rebalance-shard-elasticsearch>
+3. <https://t37.net/how-to-fix-your-elasticsearch-cluster-stuck-in-initializing-shards-mode.html>
+4. <http://stackoverflow.com/questions/19967472/elasticsearch-unassigned-shards-how-to-fix>
