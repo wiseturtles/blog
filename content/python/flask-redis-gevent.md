@@ -1,9 +1,9 @@
-Title: 高并发下Flask中采用gevent方式启用导致redis连接数增加
+Title: 高并发下连接redis导致redis连接失败
 Date: 2015-06-26 12:59
 Tags: flask, redis, gevent
 Slug: flask-redis-gevent
 Author: crazygit
-Summary: 高并发下Flask中采用gevent方式启用导致redis连接数增加,　引起redis服务器连接失败
+Summary: 高并发下, Flask中采用gevent方式运行，导致redis连接数增加,　引起redis服务器连接失败
 
 
 ### 现象
