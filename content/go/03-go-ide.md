@@ -1,6 +1,6 @@
-Title:  Go学习笔记——(3)打造Sublime Text 3作为GO的集成开发环境(IDE)
+Title: Go学习笔记——(3)打造Sublime Text 3作为Go的集成开发环境
 Date: 2015-07-13 16:45
-Tags: go, ide, sublime,
+Tags: go, ide, sublime
 Slug: go-ide
 Author: crazygit
 Summary: go学习笔记——(3)打造Sublime Text 3作为GO的集成开发环境(IDE)
@@ -109,5 +109,6 @@ Ubuntu 64位的tarball包，解压出来可以直接用了。
 ### 使用
 
 创建一个Go文件，默认情况下:
+
 * 连续两次输入`Ctrl + dot(.)`, 可以查看GoSublime的功能和快捷键.
 * 使用`gd`可以使用GoDef插件的跳转, 更多使用可以参考两个插件的帮助文档
