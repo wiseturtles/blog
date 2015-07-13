@@ -1,4 +1,4 @@
-Title:  Go学习笔记——(2)初始Go
+Title:  Go学习笔记——(2)初识Go
 Date: 2015-06-30 23:37
 Tags: go, 入门
 Slug: go-introduce
@@ -17,13 +17,13 @@ Go tool先天就是设计来与开源仓库协作的，不管你愿不愿意发�
 
 Go代码必须保存在一个工作空间里，　一个工作空间要有三个根目录
 
-* src    
+* src
 Go源代码
 
-* pkg    
+* pkg
 Go库文件
 
-* bin   
+* bin
 包含可执行命令
 
 一个工作空间的示例:
@@ -96,7 +96,7 @@ github.com/user
     }
 
 使用go工具编译并安装程序
- 
+
     $ cd $GOPATH
     $ go install github.com/crazygit/hello
 
