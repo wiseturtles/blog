@@ -1,9 +1,9 @@
-Title: Go学习笔记——(3)打造Sublime Text 3作为Go的集成开发环境
+Title: Go学习笔记3之打造Sublime Text 3作为Go的集成开发环境
 Date: 2015-07-13 16:45
 Tags: go, ide, sublime
 Slug: go-ide
 Author: crazygit
-Summary: go学习笔记——(3)打造Sublime Text 3作为GO的集成开发环境(IDE)
+Summary: Go学习笔记3之打造Sublime Text 3作为GO的集成开发环境(IDE)
 
 
 ### 可用于GO开发的工具

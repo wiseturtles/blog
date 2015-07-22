@@ -1,9 +1,9 @@
-Title:  Go学习笔记——(2)初识Go
+Title:  Go学习笔记2之初识Go
 Date: 2015-06-30 23:37
 Tags: go, 入门
 Slug: go-introduce
 Author: crazygit
-Summary: go学习笔记——(2)初识Go
+Summary: Go学习笔记2之初识Go
 
 
 本文参考于:
@@ -55,12 +55,19 @@ src/
 
 ### 设置GOPATH环境变量
 
-GOPATH是Go中唯一必须需要设置的环境变量, GOPATH就是工作空间的路径
+GOPATH是Go中唯一必须需要设置的环境变量, GOPATH就是工作空间的路径, 并且GOPATH可
+以设置多个值，区别是使用`go get`命令的时候默认将下载的包安装在GOPATH第一个路径
+下面，我自己一般设置两个路径作为GOPATH的值，一个用于专门下载第三方包，一个作为
+自己的工作环境,　这有的好处是可以在代码版本控制时, 不受第三方库的影响
 
 如:
 
-    $ mkdir $HOME/go
-    $ export GOPATH=$HOME/go
+    # $HOME/golang作为第三方包的下载目录
+    # $HOME/github/golang作为自己的开发目录
+    $ export GOPATH="$HOME/golang:$HOME/github/golang"
+
+    # 将每个GOPATH下面的bin目录添加到PATH变量
+    $ export PATH=$PATH:$GOROOT/bin:${GOPATH//://bin:}/bin
 
 
 ### 包路径

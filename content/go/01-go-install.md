@@ -1,9 +1,9 @@
-Title:  Go学习笔记——(1)安装Go
+Title:  Go学习笔记1之安装Go
 Date: 2015-06-30 23:11
 Tags: go, 入门
 Slug: go-install
 Author: crazygit
-Summary: go学习笔记——(1)安装go
+Summary: Go学习笔记1之安装go
 
 
 本文参考于:
@@ -18,12 +18,12 @@ Summary: go学习笔记——(1)安装go
 
 整个安装过程比较简单，下载安装包，配置环境变量即可。
 
-以Linux为例. 
+以Linux为例.
 
     $ wget https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz
     $ tar -C /usr/local -xzf go1.4.2.linux-amd64.tar.gz
 
-添加环境变量: 
+添加环境变量:
 
     export GOROOT=/usr/local/go
     export PATH=$PATH:$GOROOT/bin
@@ -31,7 +31,7 @@ Summary: go学习笔记——(1)安装go
 `GOROOT`是告诉系统Go安装在哪里，
 `PATH`是指定Go相关命令的调用路径.
 
-环境检查，按照国际惯例，当然是先来"Hello World". 创建`hello.go`: 
+环境检查，按照国际惯例，当然是先来"Hello World". 创建`hello.go`:
 
     :::go
     package main
@@ -47,5 +47,4 @@ Summary: go学习笔记——(1)安装go
     $ go run hello.go
     hello, world
 
-如果输出"hello,world"， 则表示环境没有什么问题. 
-
+如果输出"hello,world"， 则表示环境没有什么问题.
