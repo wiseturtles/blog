@@ -16,7 +16,7 @@ Summary: Elastichsearch反向代理设置
 nginx配置如下:
 
 <pre>
-    location ^~ /es/ {
+    location ~ ^/es/ {
             rewrite ^/es/(.*)$ /$1 break;
             include proxy_params;
             proxy_pass http://es_node_ip:9200;
