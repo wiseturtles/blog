@@ -201,6 +201,7 @@ Gerrit的使用必须依赖于数据库，目前支持的数据库有H2(Gerrit�
     $ htpasswd -b -c /home/gerrit2/gerrit/etc/auth_passwd admin admin
 
 ## 测试
+
 访问<http://localhost/>输入用户名和密码即可登陆到Gerrit
 
 
@@ -234,3 +235,12 @@ Gerrit的使用必须依赖于数据库，目前支持的数据库有H2(Gerrit�
 关于gerrit主题设置，使用方法等更多信息，官方文档上已有详细描述, 请参考:
 
 <https://gerrit-documentation.storage.googleapis.com/Documentation/2.9.4/index.html>
+
+## 更新
+
+_最近因工作需要，又重新搭建了一次gerrit, 遇到一些坑, 记录一下_.
+
+1. 如果用MySQL作为数据库，Gerrit数据库的引擎应该是Innodb.
+2. 配置邮件时，一直认证失败，除了在`etc/gerrt.conf`文件里指定`sendmail.smtpUser`, 还需要指定`sendmail.from`为发送邮件的用户信息, 格式为`username <youmail@mail.com>`
+3. 认证可以使用github oauth认证[gerrit-oauth-provider](https://github.com/davido/gerrit-oauth-provider)
+
