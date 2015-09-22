@@ -7,6 +7,8 @@ Summary: 在Debian 8.2上安装Sentry
 
 Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, PHP, Ruby, Java, Go以及Android、iOS。
 
+[官方安装文档](http://sentry.readthedocs.org/en/stable/index.html#)
+
 ## 系统环境
 
 查看系统版本。
@@ -20,8 +22,6 @@ Sentry是一个很好用的错误、异常收集平台，支持Python, Node.js, 
     Codename:   jessie
 
 ## 准备数据库环境
-
-[官方安装文档]()
 
 virtualenv的安装、配置就不再介绍了。
 
@@ -175,3 +175,9 @@ supervisor管理sentry_worker:
     ```
 
 重启nginx，并通过http://your-ip 访问。
+
+## 测试
+
+开始我们就提到过sentry支持目前所有主流语言，
+参考[这里](https://docs.getsentry.com/hosted/clients/python/)
+可以检查是否能将错误、异常发生到自己搭建的sentry。
