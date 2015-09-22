@@ -5,7 +5,9 @@ Slug: Getstarted-Node.js
 Author: ox0spy
 Summary: Node.js入门
 
-## 为啥学Node.js
+大家都知道Node.js是基于JavaScript的，使JavaScript可以用于后台开发。
+
+## 为啥学JavaScript
 
 - 公司项目需要
 - JavaScript程序员之多社区之活跃
