@@ -14,6 +14,7 @@ Summary: Nginx配置SSL证书, 启用HTTPS
 * <http://op.baidu.com/2015/04/https-s01a01/>
 * <http://oncenote.com/2014/10/21/Security-1-HTTPS/>
 * <http://oncenote.com/2015/09/16/Security-2-HTTPS2/>
+* <https://www.vobe.io/114>
 
 
 # Nginx配置SSL证书, 启用HTTPS
@@ -40,16 +41,26 @@ Summary: Nginx配置SSL证书, 启用HTTPS
     $ cd /etc/ssl/certs
     $ openssl dhparam -out dhparam.pem 4096
 
+同时，启用了spdy，参考: <https://www.vobe.io/114>
+
 Nginx配置文件(`/etc/nginx/sites-avaiable/default`)如下:
 
+    #server {
+    #   listen 80;
+    #   server_name your-domain;
+    #   add_header Strict-Transport-Security max-age=15768000;
+    #   return 301 https://your-domain$request_uri;
+    #}
+
     server {
-        #listen 80;
-        listen 443 ssl;
+        listen 80; # 如果希望http直接跳转到https，删除该行，并去掉上面的注释
+        listen 443 ssl spdy;
+        spdy_headers_comp 1;
         server_name your-domain;
 
         ssl on;
-        ssl_certificate      /etc/ssl/your.crt;
-        ssl_certificate_key  /etc/ssl/your.key;
+        ssl_certificate      /etc/ssl/your-domain.crt;
+        ssl_certificate_key  /etc/ssl/your-domain.key;
 
         ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
@@ -59,16 +70,21 @@ Nginx配置文件(`/etc/nginx/sites-avaiable/default`)如下:
         ssl_prefer_server_ciphers  on;
         ssl_dhparam /etc/ssl/certs/dhparam.pem;
 
-        ssl_session_cache    shared:SSL:10m;
+        ssl_session_cache    shared:SSL:20m;
+        ssl_session_timeout  60m;
 
         ssl_stapling on;
         ssl_stapling_verify on;
+        #ssl_trusted_certificate /etc/nginx/cert/trustchain.crt;
         #resolver 8.8.4.4 8.8.8.8 valid=300s;
         #resolver_timeout 10s;
 
-        add_header Strict-Transport-Security max-age=63072000;
+        add_header Strict-Transport-Security max-age=15768000;
+
         add_header X-Frame-Options DENY;
         add_header X-Content-Type-Options nosniff;
+
+        add_header Alternate-Protocol 443:npn-spdy/3.1;
 
         proxy_set_header   Host                 $http_host;
         proxy_set_header   X-Forwarded-Proto    $scheme;
@@ -80,7 +96,6 @@ Nginx配置文件(`/etc/nginx/sites-avaiable/default`)如下:
         }
     }
 
-
 ## 测试HTTPS
 
 curl测试服务器上的https接口:
@@ -91,3 +106,7 @@ curl测试服务器上的https接口:
 测试HTTPS配置的是否安全：[https://www.ssllabs.com/ssltest/](https://www.ssllabs.com/ssltest/)
 
 注：如果安全评分比较低，请认真阅读[Strong SSL Security on nginx](http://note.sdo.com/u/634668972018478681/n/Z1NG3C6A959F29DD2FA2D543B8C9B30B551810C3)
+
+## 测试SPDY
+
+检测配置的SPDY：<spdycheck.org>
