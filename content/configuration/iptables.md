@@ -106,20 +106,10 @@ iptables配置好在当前环境生效，但，重启系统就不再可用。
 
 #### Debian
 
-保存iptables配置到/etc/iptables:
+重启时自动加载iptables配置信息:
 
     :::bash
-    $ sudo bash -c 'iptables-save > /etc/iptables'
-
-重启时/etc/iptables加载配置，修改/etc/network/if-pre-up.d/iptables内容如下:
-
-    :::bash
-    $ cat /etc/network/if-pre-up.d/iptables
-    #!/bin/sh
-
-    /sbin/iptables-restore < /etc/iptables
-
-    $ sudo chmod +x /etc/network/if-pre-up.d/iptables
+    $ sudo apt-get install iptables-persistent
 
 #### CentOS
 
