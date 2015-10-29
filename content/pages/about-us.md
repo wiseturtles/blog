@@ -28,7 +28,11 @@ Summary: 关于我们
 <br/>
 ## 成员介绍
 
-### ox0spy 
+### ox0spy
+
+喜欢开发，主要语言是C, Bash, Python, Golang，目前在成都一家创业公司负责研发团队。
+
+常年招聘有潜力的 **服务端后台**、**Web前端** 工程师、实习生，有兴趣的加我微信: oxkillgod
 
 * [贡献文章列表](http://blog.wiseturtles.com/author/ox0spy.html)
 
