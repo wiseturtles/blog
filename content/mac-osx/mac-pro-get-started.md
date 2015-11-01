@@ -78,6 +78,38 @@ powerline font: https://github.com/powerline/fonts
 字体安装后需要在iTerm2中选用刚安装的打过powerline patch的字体。
 
 
+## CocoaPods
+
+[CocoaPods](https://cocoapods.org/)是Xcode项目的依赖库管理工具。
+
+我将它安装到自己的$HOME目录下，也可以直接安装到系统目录。
+
+将下面内容添加到 $HOME/.zshrc中
+
+> export GEM_HOME=$HOME/.gem
+> export PATH=$GEM_HOME/ruby/2.0.0/bin:$PATH
+
+通过下面命令安装CocoaPods:
+
+    :::bash
+    $ source ~/.zshrc  # 获取GEM_HOME, PATH配置
+    $ gem sources -l  # 列出当前ruby gem源地址
+    $ gem sources --remove https://rubygems.org/  # 删除官方源
+    $ gem sources -a https://ruby.taobao.org/  # 使用淘宝ruby gem镜像
+    $ gem install cocoapods --user-install  # 安装CocoaPods
+    $ pod install
+
+使用CocoaPods国内镜像索引:
+
+    :::bash
+    $ pod repo  # 查看repo信息，下面修改repo master git URL
+    $ pod repo remove master
+    $ pod repo add master https://gitcafe.com/akuandev/Specs.git
+    $ pod repo update
+
+CocoaPods的更多介绍请阅读[用CocoaPods做iOS程序的依赖管理](http://blog.devtang.com/blog/2014/05/25/use-cocoapod-to-manage-ios-lib-dependency/)
+
+
 ## vim
 
 常用vim，在mac上配置下，曾经自己的vim配置有点乱了，发现［k-vim](https://github.com/wklken/k-vim)不错，就使用它了。
