@@ -10,10 +10,24 @@ Summary: Mac Pro环境配置
 下面记录下环境配置和最近使用感受。
 
 
-## XCode
+## Xcode
+
+### 安装Xcode命令行工具:
 
     :::bash
     $ xcode-select --install
+
+### Xcode包管理工具[Alcatraz](http://alcatraz.io/)安装:
+
+    :::bash
+    $ curl -fsSL https://raw.githubusercontent.com/supermarin/Alcatraz/deploy/Scripts/install.sh | sh
+
+### Xcode安装Solarized-Dark-for-Xcode主题:
+- 打开Xcode，Window -> Package Manager，选择Color Themes，搜索solar，安装ArtSabintsev/Solarized-Dark-for-Xcode
+- 重启Xcode，Xcode -> Preference -> Fonts & Colors，选择刚才安装的Solarized-Dark-for-Xcode
+- 再重启Xcode生效
+
+> 注：如果想修改字体及字体大小，请手动修改`~/Library/Developer/Xcode/UserData/FontAndColorThemes/Solarized\ Dark\ for\ Xcode.dvtcolortheme`
 
 
 ## Homebrew
