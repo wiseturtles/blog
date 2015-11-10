@@ -77,6 +77,28 @@ powerline font: https://github.com/powerline/fonts
 
 字体安装后需要在iTerm2中选用刚安装的打过powerline patch的字体。
 
+## GNU command line tools
+
+Mac默认的命令行工具太蛋疼了，至少对我这样非常熟悉Linux的人来说是这样的。下面介绍下如何安装GNU命令行工具:
+
+    :::bash
+    brew install coreutils
+    brew tap homebrew/dupes
+    brew install binutils
+    brew install diffutils
+    brew install ed --default-names
+    brew install findutils --with-default-names
+    brew install gawk
+    brew install gnu-indent --with-default-names
+    brew install gnu-sed --with-default-names
+    brew install gnu-tar --with-default-names
+    brew install gnu-which --with-default-names
+    brew install grep --with-default-names
+    brew install gzip
+    brew install watch
+    brew install wdiff --with-gettext
+    brew install wget
+
 
 ## CocoaPods
 
