@@ -1,7 +1,7 @@
 Title: top
 Date: 2015-11-23 14:21
 Tags: linux, command, top
-Slug: linux-htop
+Slug: linux-top
 Author: crazygit
 Summary: the usage of top
 
