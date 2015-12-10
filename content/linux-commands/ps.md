@@ -177,7 +177,15 @@ ps命令用来列出系统中当前运行的那些进程。ps命令列出的是�
         $ ps -A -o stat,ppid,pid,cmd |grep -e '^[Zz]'
         $ ps -ef | grep defunct | grep -v grep
 
-12. 部分选项解释
+12. 指定用户, 程序的CPU和内存使用情况统计
+
+        :::bash
+        # redis用户所使用的cpu和内存信息统计
+        $ ps --no-headers -u redis -o pcpu,pmem,command | awk '{cpu += $1; pmem += $2} END {print cpu, pmem}'
+        # 查看只是监听在6000端口的redis使用cpu和内存信息
+        $ ps --no-headers -u redis -o pcpu,pmem,command | grep 6000 | awk '{cpu += $1; pmem += $2} END {print cpu, pmem}'
+
+13. 部分选项解释
 
 <pre>
 -a： 显示所有终端机下执行的程序，除了阶段作业领导者之外。

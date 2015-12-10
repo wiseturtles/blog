@@ -24,6 +24,7 @@ scrapyd是一个守护进程，监听爬虫的运行和请求，然后启动进�
 ### 启动服务
 
 ```bash
+# 注意，启动scrapyd的目录会保存整个scrapyd运行期间生成的log, item文件，所以请选择合适的位置运行该命令
 $ scrapyd
 ```
 
@@ -250,8 +251,7 @@ scrapyd的web界面比较简单，主要用于监控，所有的调度工作全�
 
 * 调度爬虫
 
-        $ curl http://localhost:6800/schedule.json -d project=myproject -d
-        spider=somespider
+        $ curl http://localhost:6800/schedule.json -d project=myproject -d spider=somespider
         # 带上参数
         $ curl http://localhost:6800/schedule.json -d project=myproject -d spider=somespider -d setting=DOWNLOAD_DELAY=2 -d arg1=val1
 
@@ -326,3 +326,22 @@ delversion.json   = scrapyd.webservice.DeleteVersion
 listjobs.json     = scrapyd.webservice.ListJobs
 ```
 关于配置的各个参数具体含义，可以参考[官方文档](http://scrapyd.readthedocs.org/en/stable/config.html)
+
+
+## 更新
+
+上面的对于`scrapyd`默认项目(即是启动`scrapyd`命令后看到的`default`项目.)的理解有些错误，只有在scrapy项目里启动`scrapyd`命令
+时才有默认项目，默认项目就是当前的`scrapy`项目，如果在非scrapy项目下执行`scrapyd `, 是看不到`default`的，　
+在爬虫里项目里直接使用`scrapyd`命令的好处是: 直接通调度爬虫运行, 比较适用于当前爬虫项目代码结构不规范，没法`Eggifying`的情况，因为在使用`scrapyd-client`部署爬虫的前提就是爬虫项目必须满足下面的条件:
+
+> Deploying your project to a Scrapyd server typically involves two steps:
+>
+> * Eggifying your project. You'll need to install setuptools for this. See Egg Caveats below.
+> * Uploading the egg to the Scrapyd server through the addversion.json endpoint.
+
+
+## 小结
+
+关于scrapyd，个人感觉比较适合单机部署爬虫和调度使用，分布式的爬虫调度可能不太合适，需要每台机器上都启动这样一个服务，日志也没有办法集中，用jenkins来做可能更合适.
+
+
