@@ -138,6 +138,8 @@ CocoaPods的更多介绍请阅读[用CocoaPods做iOS程序的依赖管理](http:
 
 
     :::bash
+    $ brew install macvim  # 只使用了macvim，没有用原生vim
+    $ ln -s /usr/local/bin/mvim /usr/local/bin/vim  # 否则YouCompleteMe等plugin会报无法安装需要 vim 7.4 之类的
     $ git clone https://github.com/wklken/k-vim.git ~/k-vim
     $ cd ~/k-vim && bash -x install.sh
 
