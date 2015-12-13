@@ -59,7 +59,8 @@ Summary: Mac Pro环境配置
 
 ## iTerm2
 
-从苹果App Store上搜索安装iTerm2.
+- 从[官网](https://www.iterm2.com/)下载、安装iTerm2。
+- 关闭烦人的bell: `iTerm 2: Preferences -> Profiles -> Tab: Terminal -> Notifications -> Silence Bell`
 
 
 ## Zsh
