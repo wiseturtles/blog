@@ -59,3 +59,6 @@ output/
 *.swp
 cache
 *.pid
+
+# Mac os
+.DS_Store
