@@ -30,7 +30,7 @@ $ ls -lO /usr/share/vim
 -rwxr-xr-x  8 root  wheel  restricted - Aug  2 22:36 /usr/share/vim
 ```
 
-参考: http://stackoverflow.com/questions/30768087/restricted-folder-files-in-os-x-el-capitan
+参考: <http://stackoverflow.com/questions/30768087/restricted-folder-files-in-os-x-el-capitan>
 
 - reboot
 - as soon as you hear the "Mac sound" on the grey screen, press Cmd+R to enter Recovery mode
