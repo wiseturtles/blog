@@ -12,7 +12,7 @@ Summary: Ubuntu/Debian自动安装安全更新
 ## 安装unattended-upgrades自动更新安全补丁
 
     $ sudo apt-get install unattended-upgrades
-    $ sudo dpkg-configure unattended-upgrades  # 选Yes，自动下载安装
+    $ sudo dpkg-reconfigure unattended-upgrades  # 选Yes，自动下载安装
 
 根据自己情况修改配置文件 - `/etc/apt/apt.conf.d/50unattended-upgrades`
 
