@@ -60,6 +60,7 @@ Ubuntu上安装软件很方便，指令如下：
     Hello World
 
 说明：
+
 - gcc -S生成c代码对应的汇编代码，但是汇编代码中的.globl label为main
 - 因为汇编代码的`.globl label`是`main`，所以必须使用`-e`参数指定label为`main`；默认是`_start`
 - 因为汇编代码直接使用了c的库函数printf、exit，所以必须指定-lc链接c标准库
@@ -89,3 +90,6 @@ Ubuntu上安装软件很方便，指令如下：
     Hello World
 
     $ gcc -o new_hello new_hello.s  # 当然可以直接用这条指令编译、链接生成可执行文件
+
+
+本文简单介绍了如何用汇编写`Hello World`，并尝试手动编译、链接c程序，最好介绍了在汇编中如何调用c库函数。
