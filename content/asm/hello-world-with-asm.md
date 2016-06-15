@@ -7,6 +7,13 @@ Summary: Hello World with asm on Linux.
 
 用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。
 
+## 开发环境准备
+
+所有开发都在Ubuntu上完成，需要用的binutils, gcc, gdb。
+
+Ubuntu上安装软件很方便，指令如下：
+
+    $ sudo apt-get install binutils gcc gdb
 
 ## asm Hello World
 
