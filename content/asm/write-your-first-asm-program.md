@@ -1,9 +1,9 @@
-Title: Hello World with asm
+Title: Write Your First ASM Program
 Date: 2016-06-15 22:09
 Tags: asm, Linux
-Slug: hello-world-with-asm
+Slug: Write-Your-First-ASM-Program
 Author: ox0spy
-Summary: Hello World with asm on Linux.
+Summary: Write Your First ASM Program
 
 用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。
 
