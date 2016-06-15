@@ -41,7 +41,7 @@ Ubuntu上安装软件很方便，指令如下：
 	$ ./hello
     Hello World
 
-## 下面看下如何一步一步编译、链接c程序
+## 如何一步一步编译、链接c程序
 
 	$ cat helloc.c
     #include <stdio.h>
