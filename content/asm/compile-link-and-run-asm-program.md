@@ -10,6 +10,10 @@ Summary: 编译、链接、运行汇编程序的小脚本
 
 所以，写个小脚本完成汇编程序的编译、链接及运行。
 
+## 脚本介绍
+
+脚本内容如下：
+
 
 	#!/bin/bash -e
 
@@ -33,7 +37,7 @@ Summary: 编译、链接、运行汇编程序的小脚本
     basename="$(basename -s '.s' $src)"
     obj="$dir/${basename}.o"
     bin="$dir/$basename"
-    as_opts="--32"
+    as_opts="--32 -gstabs"  # -gstabs: 使用该参数可以通过gdb调试代码
     ld_opts="-m elf_i386"
 
     # check if .global label is not the default "_start"; if not "_start", then using "-e label"
@@ -56,3 +60,23 @@ Summary: 编译、链接、运行汇编程序的小脚本
 
 
 注：上篇文章已经讲过学习资料是AT&T 32位汇编，而个人电脑是64位系统，所以，指定了 `as --32` 和 `ld -m elf_i386`。
+
+
+## 如何使用呢?
+
+将脚本放入 `~/bin/` 目录内，并设置可执行权限 `chmod +x ~/bin/asm-run.sh`，然后将 `$HOME/bin` 加入 `$PATH` 环境变量。
+
+    $ echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+
+这样就可以在任意目录中直接通过 `asm-run.sh` 运行脚本了。
+
+假如下载有个`myhello.s`的汇编源码，通过该脚本编译运行的方法如下：
+
+    $ asm-run.sh myhello.s
+    as --32 -o ./myhello.o myhello.s
+    ld -m elf_i386 -e main -lc -dynamic-linker /lib32/ld-linux.so.2 -o ./myhello ./myhello.o
+    run ./myhello ...
+    Hello World
+
+
+终于不用一遍一遍的输入指令，编译、链接、运行汇编程序了。
