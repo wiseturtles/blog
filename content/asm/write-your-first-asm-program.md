@@ -5,19 +5,22 @@ Slug: Write-Your-First-ASM-Program
 Author: ox0spy
 Summary: Write Your First ASM Program
 
+
 用汇编写个Hello World，同时看看如何一步一步将c程序编译成可执行文件。
+
 
 ## 开发环境准备
 
-所有开发都在Ubuntu上完成，需要用的binutils, gcc, gdb。
+所有开发都在Ubuntu上完成，需要用的软件包：binutils, gcc, gdb。
 
 Ubuntu上安装软件很方便，指令如下：
 
     $ sudo apt-get install binutils gcc gdb
 
+
 ## asm Hello World
 
-用asm写个Hello World，.data数据段中定义msg变量为 "Hello World\n"，.text指令段从\_start开始，否则需要ld时指定-e label。
+用asm写个Hello World，`.data`数据段中定义msg变量为 `"Hello World\n"`，`.text`指令段从`_start`开始，否则需要ld时指定`-e label`。
 程序调用了printf输出msg，然后调用exit(0)退出。
 
 	$ cat hello.s
@@ -41,6 +44,7 @@ Ubuntu上安装软件很方便，指令如下：
 	$ ./hello
     Hello World
 
+
 ## 如何一步一步编译、链接c程序
 
 	$ cat helloc.c
@@ -61,10 +65,11 @@ Ubuntu上安装软件很方便，指令如下：
 
 说明：
 
-- gcc -S生成c代码对应的汇编代码，但是汇编代码中的.globl label为main
+- gcc -S生成c代码对应的汇编代码，但是汇编代码中的`.globl label`为main
 - 因为汇编代码的`.globl label`是`main`，所以必须使用`-e`参数指定label为`main`；默认是`_start`
 - 因为汇编代码直接使用了c的库函数printf、exit，所以必须指定-lc链接c标准库
 - -lc动态链接c标准库，所以，必须指定运行时加载动态库的程序，即：`-dynamic-linker /lib64/ld-linux-x86-64.so.2`
+
 
 ## asm Hello World (改进版)
 
