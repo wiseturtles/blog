@@ -66,11 +66,11 @@ Summary: 编译、链接、运行汇编程序的小脚本
 
 将脚本放入 `~/bin/` 目录内，并设置可执行权限 `chmod +x ~/bin/asm-run.sh`，然后将 `$HOME/bin` 加入 `$PATH` 环境变量。
 
-    $ echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc
+    $ echo 'export PATH=$HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc
 
 这样就可以在任意目录中直接通过 `asm-run.sh` 运行脚本了。
 
-假如下载有个`myhello.s`的汇编源码，通过该脚本编译运行的方法如下：
+假如现在有`myhello.s`的汇编源码，通过该脚本编译运行的方法如下：
 
     $ asm-run.sh myhello.s
     as --32 -o ./myhello.o myhello.s
@@ -79,4 +79,4 @@ Summary: 编译、链接、运行汇编程序的小脚本
     Hello World
 
 
-终于不用一遍一遍的输入指令，编译、链接、运行汇编程序了。
+终于不用一遍一遍的输入指令编译、链接、运行汇编程序了。
