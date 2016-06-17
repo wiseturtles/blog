@@ -55,8 +55,15 @@ Summary: 编译、链接、运行汇编程序的小脚本
     as $as_opts -o $obj $src
     echo "ld $ld_opts -o $bin $obj"
     ld $ld_opts -o $bin $obj
+
+    # `set +e` 命令执行返回值不为零也不退出程序
+    set +e
     echo "run $bin ..."
     $bin
+    # 显示执行汇编程序的返回值
+    echo "return value: $?"
+    # `set -e` 重新开启命令执行返回值不为零就退出程序
+    set -e
 
 
 注：上篇文章已经讲过学习资料是AT&T 32位汇编，而个人电脑是64位系统，所以，指定了 `as --32` 和 `ld -m elf_i386`。
