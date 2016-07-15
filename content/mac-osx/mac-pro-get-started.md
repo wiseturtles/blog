@@ -45,6 +45,7 @@ Summary: Mac Pro环境配置
     $ brew cleanup
     $ brew list --versions
 
+使用`清华大学Tuna镜像源`：[Homebrew 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/homebrew/)
 
 ## Homebrew Cask
 
@@ -99,6 +100,15 @@ Mac默认的命令行工具太蛋疼了，至少对我这样非常熟悉Linux的
     brew install watch
     brew install wdiff --with-gettext
     brew install wget
+
+
+## pip
+
+个人经常写点Python代码，需要安装Python模块管理工具-`pip`
+
+[Installing with get-pip.py](https://pip.pypa.io/en/stable/installing/)
+
+pypi源设置请参考：[清华大学Tuna的pypi 镜像使用帮助](https://mirrors.tuna.tsinghua.edu.cn/help/pypi/)
 
 
 ## CocoaPods
