@@ -51,3 +51,6 @@ Summary: Mac/Linux Too many files open error.
         memlock     unlimited      unlimited
         maxproc     709            1064
         maxfiles    8192           10240
+
+    # 注：
+    $ sudo launchctl limit maxfiles unlimited  # 也可以直接设置为unlimited
