@@ -16,13 +16,13 @@ Summary: SaltStack介绍
 
     $ sudo rpm --import https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTSTACK-GPG-KEY.pub
     $ sudo bash -c 'cat - > /etc/yum.repos.d/saltstack.repo <<"EOF"
-[saltstack-repo]
-name=SaltStack repo for RHEL/CentOS $releasever
-baseurl=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest
-enabled=1
-gpgcheck=1
-gpgkey=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest/SALTSTACK-GPG-KEY.pub
-EOF'
+    [saltstack-repo]
+    name=SaltStack repo for RHEL/CentOS $releasever
+    baseurl=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest/SALTSTACK-GPG-KEY.pub
+    EOF'
     $ sudo yum clean expire-cache
     $ sudo yum install -y salt-master
     $ sudo systemctl enable salt-master.service
@@ -34,13 +34,13 @@ EOF'
 
     $ sudo rpm --import https://repo.saltstack.com/yum/redhat/7/x86_64/latest/SALTSTACK-GPG-KEY.pub
     $ sudo bash -c 'cat - > /etc/yum.repos.d/saltstack.repo <<"EOF"
-[saltstack-repo]
-name=SaltStack repo for RHEL/CentOS $releasever
-baseurl=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest
-enabled=1
-gpgcheck=1
-gpgkey=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest/SALTSTACK-GPG-KEY.pub
-EOF'
+    [saltstack-repo]
+    name=SaltStack repo for RHEL/CentOS $releasever
+    baseurl=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest
+    enabled=1
+    gpgcheck=1
+    gpgkey=https://repo.saltstack.com/yum/redhat/$releasever/$basearch/latest/SALTSTACK-GPG-KEY.pub
+    EOF'
     $ sudo yum clean expire-cache
     $ sudo yum install -y salt-minion
     $ sudo bash -c "echo 'master: $SALT_MASTER' >> /etc/salt/minion" # $SALT_MASTER 替换为salt master主机的IP
@@ -122,6 +122,6 @@ salt-minion设置过master IP并重启salt-minion后，应该在salt-master上�
 
 注: 理论上salt-minion也可以通过这种方式运行以指定用户运行，但我测试会报错 "Minion did not return. [No response]"
 
-### 删除不存在的salt minion
+### 删除无法连接的salt minion
 
     [root@master ~]$ salt-run manage.down removekeys=True
