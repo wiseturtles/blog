@@ -1,6 +1,6 @@
 Title: 申请招商银行香港一卡通
 Date: 2016-08-15 20:40
-Tags: 招商银行
+Tags: life, 招商银行
 Slug: 申请招商银行香港一卡通
 Author: ox0spy
 Summary: 申请招商银行香港一卡通
