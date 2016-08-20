@@ -159,9 +159,13 @@ CocoaPods的更多介绍请阅读[用CocoaPods做iOS程序的依赖管理](http:
 2. YouCompleteMe安装总失败，后来手动下载安装
 
 
+## 安装Java JDK
+
+    $ brew cask install java
+
 ## Intellij IDEA
 
-IDEA运行需要JDK，从oracle官网下载、安装Java 1.8 JDK。
+IDEA运行需要JDK。
 
 从IDEA -> Project Default -> Project Structure -> SDKS中添加JDK和Intellij Platform Plugin SDK。（需要选择JDK、Intellij的目录）
 
