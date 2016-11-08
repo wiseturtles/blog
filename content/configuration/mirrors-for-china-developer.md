@@ -30,6 +30,19 @@ Summary: mirrors for china developer
     [global]
     index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 
+### NPM
+
+使用 taobao 或者 tuna 的NPM源。
+
+  # tuna 或者 taobao设置其一即可
+  $ npm set registry https://registry.npm.taobao.org   # 淘宝
+  $ npm set registry https://npm.tuna.tsinghua.edu.cn/ # tuna
+
+  # 查看源设置
+  $ npm get registry
+  $ cat ~/.npmrc
+
+
 ### Java Maven
 
 将如下源写到maven的conf/settings.xml文件中的mirrors节点中。
@@ -42,6 +55,31 @@ aliyun:
       	<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
       	<mirrorOf>central</mirrorOf>
 	</mirror>
+
+### Java Gradle
+
+创建 或 修改`~/.gradle/init.gradle` 文件，使用oschina 或者 aliyun 的源。
+
+  $ cat ~/.gradle/init.gradle
+  allprojects{
+      repositories {
+          // def REPOSITORY_URL = 'http://maven.oschina.net/content/groups/public'
+          def REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public/'
+          all { ArtifactRepository repo ->
+              if(repo instanceof MavenArtifactRepository){
+                  def url = repo.url.toString()
+                  if (url.startsWith('https://repo1.maven.org/maven2') || url.startsWith('https://jcenter.bintray.com/')) {
+                      project.logger.lifecycle "Repository ${repo.url} replaced by $REPOSITORY_URL."
+                      remove repo
+                  }
+              }
+          }
+          maven {
+              url REPOSITORY_URL
+          }
+      }
+  }
+
 
 ### Ruby gem
 
