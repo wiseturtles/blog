@@ -60,25 +60,26 @@ aliyun:
 
 创建 或 修改`~/.gradle/init.gradle` 文件，使用oschina 或者 aliyun 的源。
 
-  $ cat ~/.gradle/init.gradle
-  allprojects{
-      repositories {
-          // def REPOSITORY_URL = 'http://maven.oschina.net/content/groups/public'
-          def REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public/'
-          all { ArtifactRepository repo ->
-              if(repo instanceof MavenArtifactRepository){
-                  def url = repo.url.toString()
-                  if (url.startsWith('https://repo1.maven.org/maven2') || url.startsWith('https://jcenter.bintray.com/')) {
-                      project.logger.lifecycle "Repository ${repo.url} replaced by $REPOSITORY_URL."
-                      remove repo
-                  }
-              }
-          }
-          maven {
-              url REPOSITORY_URL
-          }
-      }
-  }
+	
+	$ cat ~/.gradle/init.gradle
+	allprojects{
+	  repositories {
+	      // def REPOSITORY_URL = 'http://maven.oschina.net/content/groups/public'
+	      def REPOSITORY_URL = 'http://maven.aliyun.com/nexus/content/groups/public/'
+	      all { ArtifactRepository repo ->
+	          if(repo instanceof MavenArtifactRepository){
+	              def url = repo.url.toString()
+	              if (url.startsWith('https://repo1.maven.org/maven2') || url.startsWith('https://jcenter.bintray.com/')) {
+	                  project.logger.lifecycle "Repository ${repo.url} replaced by $REPOSITORY_URL."
+	                  remove repo
+	              }
+	          }
+	      }
+	      maven {
+	          url REPOSITORY_URL
+	      }
+	  }
+	}
 
 
 ### Ruby gem
