@@ -5,7 +5,7 @@ Slug: create-restricted-linux-user-for-ssh-tunnel
 Author: ox0spy
 Summary: Linux中创建一个受限的用户，专门做ssh tunnel
 
-由于国内访问一些网站特别慢，所以，使用一台新加坡节点的机器做代理，提供浏览器、mobile访问网站速度。
+由于国内访问一些网站特别慢，所以，使用一台新加坡节点的机器做代理，提高浏览器、mobile访问网站速度。
 
 最近发现访问AWS的EC2也特别慢，所以，希望通过该代理加速SSH连接速度，`ProxyCommand ssh -q -W %h:%p proxy`这行加入希望访问的主机`~/.ssh/config`中即可。
 
