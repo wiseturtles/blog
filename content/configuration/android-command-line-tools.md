@@ -24,3 +24,8 @@ Summary: Android命令行工具
 
     :::bash
     $ android update sdk -u -a -t <num1,num2>
+
+安装指定平台的包:
+
+    $ android update sdk -u --filter platform-tools,android-24
+    $ android update sdk -u --all --filter <number> # item前面的编号
