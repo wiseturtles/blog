@@ -7,6 +7,8 @@ Summary: install hadoop on mac osx
 
 ## 安装Hadoop
 
+只是安装来学习Hadoop，所以，在自己笔记本上安装的。正式的线上环境会用多台机器搭建集群 或者 直接使用AWS的EMR。
+
 我希望尽可能的通过包管理安装软件，而不是手动下载安装。
 
 	$ brew install hadoop
@@ -95,3 +97,7 @@ Hadoop安装路径: `brew --prefix hadoop` 。
 	```
 	$ sbin/stop-yarn.sh
 	```
+
+## 参考文档
+
+- [Hadoop: Setting up a Single Node Cluster.](https://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-common/SingleCluster.html)	
